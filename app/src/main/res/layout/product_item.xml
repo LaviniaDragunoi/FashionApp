@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="product"
+            type="com.laviniadragunoi.fashionapp.database.models.ProductEntity"/>
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/product_image"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/item_margins"
+        tools:src="@drawable/ic_action_name"
+        app:layout_constraintBottom_toTopOf="@+id/product_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread_inside" />
+
+    <TextView
+        android:id="@+id/product_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/item_margins"
+        android:text="@{product.productName}"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/product_id"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/product_image"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="product_name" />
+
+    <TextView
+        android:id="@+id/product_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/item_margins"
+        android:text="@{product.productId}"
+        app:layout_constraintBottom_toTopOf="@+id/product_brand"
+        app:layout_constraintStart_toStartOf="@+id/product_name"
+        app:layout_constraintTop_toBottomOf="@+id/product_name"
+        tools:text="product_id" />
+
+    <TextView
+        android:id="@+id/product_brand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/item_margins"
+        android:text="@{product.productBrand}"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/product_id"
+        app:layout_constraintStart_toStartOf="@+id/product_id"
+        tools:text="product_brand" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
